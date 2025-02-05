@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/regestration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+   <div class="nav"> <a href="/resume" target="_blank" attribute>RESUME  </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pawan maurya<a href= "mailto:name@email.com"><i class="fa-regular fa-envelope"></i></a></div>
+
+    <div class="main">
+
+        <form action="/" method="post">
+            <h2>Create an Account</h2>
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="text" name="username" id="email" placeholder="Email ID" required>
+            <input type="password" name="password" id="password" placeholder="Use a strong password" required>
+            <input type="password" name="retypepassword" id="retypepassword" placeholder="Retype password" required>
+            <button id="nowuser" type="submit">Here we go</button>
+        </form>
+    
+       
+        <form action="/login" method="get">
+            <p>Already have an account?</p>
+            <button type="submit">Login</button>
+        </form>
+    
+    
+    </div>
+<div class="">
+  <b>  hy my name is pawan maurya </b>
+
+  <hr>
+  must install mongodb,nodejs,and scripting is allowed run on pc {run on local host port 3000}<hr>
+  create two or more account and one after other and you will see list ao all acount holder on left side select any one for message 
+ don not use same email becouse i do not use any constraint
+<b> </b>
+</div>
+
+
+   
+    <script>
+        const passwordInput = document.getElementById('password');
+        const retypePasswordInput = document.getElementById('retypepassword');
+        const submitButton = document.getElementById('nowuser');
+
+        function validatePasswords() {
+            const password = passwordInput.value;
+            const retypePassword = retypePasswordInput.value;
+
+            if (password === retypePassword && password !== "") {
+                retypePasswordInput.classList.remove('invalid');
+                retypePasswordInput.classList.add('valid');
+                submitButton.disabled = false; // Enable the submit button
+            } else {
+                retypePasswordInput.classList.remove('valid');
+                retypePasswordInput.classList.add('invalid');
+                submitButton.disabled = true; // Disable the submit button
+            }
+        }
+
+        passwordInput.addEventListener('input', validatePasswords);
+        retypePasswordInput.addEventListener('input', validatePasswords);
+    </script>
+</body>
+
+</html>

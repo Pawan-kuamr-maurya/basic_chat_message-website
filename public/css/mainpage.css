@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    height: 100vh;
+}
+
+.outer-box {
+    display: flex;
+    height: 90vh;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-column {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    padding: 10px;
+    border-right: 2px solid #ddd;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to top, #4b9675 0%, #3cba92 100%);
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.right-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.name {
+    background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.chat {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.typesend {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+#current_message {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.message-container {
+    margin: 5px 0;
+}
+
+.float-right {
+    background-color: #d1e7dd;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 60%;
+    margin-left: auto;
+}
+
+.float-left {
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 60%;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+.alluser {
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
+    margin: 5px 0;
+    box-shadow: 3px 3px 4px 3px #888888;
+}
+
+.alluser:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/mainpage.css">
+</head>
+<body>
+    <div class="outer-box">
+        <div class="left-column">
+            <div class="user">
+                <div class="username"><%= user.name %></div>
+                <div class="logout">
+                    <form action="/logout" method="get">
+                        <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
+                    </form>
+                </div>
+            </div>
+            <% alluser.forEach(element => { %>
+                <% if (user._id != element.id) { %>
+                    <form action="/selectperson" method="post">
+                        <input type="hidden" name="messageuser" value="<%= element.id %>">
+                        <button class="alluser"><%= element.name %></button>
+                    </form>
+                <% } %>
+            <% }); %>
+        </div>
+        <div class="right-column">
+            <div class="name"><%= selectuser %></div>
+            <div class="chat">
+                <div class="content" id="allmessage">
+                    <% if (message && message[0] && message[0].chat && message[0].chat.length > 0) { %>
+                        <% message[0].chat.forEach(element => { %>
+                            <div class="message-container">
+                                <div class="<%= element.from.equals(user._id) ? 'float-right' : 'float-left' %>">
+                                    <%= element.message %>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <div class="typesend">
+                    <form action="/message" method="post" style="width: 100%;">
+                        <input type="text" name="current_maessage" id="current_message" placeholder="Type your message..." required>
+                        <button type="submit"><i  style="color: #63E6BE;" class="fa-solid fa-paper-plane "></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const chat = document.getElementById('allmessage');
+            chat.scrollTop = chat.scrollHeight; // Scroll to the bottom
+        };
+    </script>
+</body>
+</html>
